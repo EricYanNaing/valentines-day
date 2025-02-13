@@ -70,6 +70,15 @@ onMounted(() => {
       />
     </div>
 
+    <a href="https://github.com/EricYanNaing/valentines-day" target="_blank">
+      <DotLottieVue 
+        class="w-10 h-10 github" 
+        autoplay 
+        loop 
+        src="https://lottie.host/e176a65b-dd66-43bd-9a2d-3ea5d27d759c/fHcvQHHS4j.lottie" 
+      />
+    </a>
+
     <!-- Logo Section -->
     <header class="w-full max-w-md mx-auto pt-8">
       <DotLottieVue 
@@ -99,7 +108,6 @@ onMounted(() => {
         </button>
         <button 
           v-if="noButtonVisible"
-          @mouseenter="moveNoButton"
           @click.prevent="moveNoButton"
           class="bg-red-500 text-white font-bold py-3 px-8 rounded-full transition-colors"
           :style="noButtonStyle"

@@ -7,3 +7,9 @@ body {
 .romantic-text {
   font-family: 'Dancing Script', cursive;
 }
+.github{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
