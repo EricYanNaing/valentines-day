@@ -38,7 +38,6 @@ const moveNoButton = () => {
   }
   if (noClickCount.value >= 4) {
     noButtonVisible.value = false // Hide the "No" button after 5 clicks
-    return
   }
 
 
@@ -111,7 +110,6 @@ onMounted(() => {
           v-if="noButtonVisible"
           @click.prevent="moveNoButton"
           class="bg-red-500 text-white font-bold py-3 px-8 rounded-full transition-colors"
-          :style="noButtonStyle"
         >
           {{ noBtn }}
         </button>
