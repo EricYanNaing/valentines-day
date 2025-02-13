@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply bg-gray-50;
+}
+.romantic-text {
+  font-family: 'Dancing Script', cursive;
+}
