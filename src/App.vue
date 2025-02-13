@@ -37,7 +37,7 @@ const moveNoButton = () => {
   const randomY = Math.random() * 200 - 100 // Moves randomly up or down
 
   noButtonStyle.value = {
-    position: 'relative',
+    position: 'absolute',
     left: `${randomX}px`,
     top: `${randomY}px`,
     transition: 'left 0.2s ease, top 0.2s ease',
