@@ -93,7 +93,7 @@ onMounted(() => {
 
     <!-- Main Content -->
     <main class="w-full max-w-md mx-auto p-3">
-      <p class="text-3xl font-semibold mt-4 romantic-text p-4 text-center">
+      <p class="text-xl lg:text-3xl font-semibold mt-4 romantic-text p-4 text-center">
           " Will you be my valentines 💖 ? "
         </p>
     </main>
