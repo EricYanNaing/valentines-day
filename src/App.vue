@@ -6,6 +6,7 @@ const showThankYou = ref(false)
 const showModal = ref(false)
 const response = ref('')
 const name = ref('')
+const noBtn = ref('No')
 const noClickCount = ref(0) // Counter for "No" button clicks
 const noButtonVisible = ref(true) // Control button visibility
 const noButtonStyle = ref({
@@ -28,25 +29,19 @@ const moveNoButton = () => {
   if (!noButtonVisible.value) return
 
   noClickCount.value++
-  if (noClickCount.value >= 5) {
+  if(noClickCount.value === 1){
+    noBtn.value = 'Are you sure'
+  }else if(noClickCount.value === 2){
+    noBtn.value = 'Really?'}
+  else if(noClickCount.value === 3){
+    noBtn.value = 'Please'
+  }
+  if (noClickCount.value >= 4) {
     noButtonVisible.value = false // Hide the "No" button after 5 clicks
     return
   }
 
-  // Get the screen size dynamically for better mobile support
-  const screenWidth = window.innerWidth || document.documentElement.clientWidth
-  const screenHeight = window.innerHeight || document.documentElement.clientHeight
 
-  // Ensure the button stays within visible bounds
-  const randomX = Math.random() * (screenWidth - 100) // Adjust to prevent overflow
-  const randomY = Math.random() * (screenHeight - 100)
-
-  noButtonStyle.value = {
-    position: 'absolute', // Absolute positioning ensures no duplicate button stays in place
-    left: `${randomX}px`,
-    top: `${randomY}px`,
-    transition: 'left 0.2s ease, top 0.2s ease',
-  }
 }
 
 
@@ -118,7 +113,7 @@ onMounted(() => {
           class="bg-red-500 text-white font-bold py-3 px-8 rounded-full transition-colors"
           :style="noButtonStyle"
         >
-          No
+          {{ noBtn }}
         </button>
       </div>
       <div v-else class="text-center">
