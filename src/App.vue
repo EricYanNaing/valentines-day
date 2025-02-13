@@ -33,16 +33,22 @@ const moveNoButton = () => {
     return
   }
 
-  const randomX = Math.random() * 200 - 100 // Moves randomly left or right
-  const randomY = Math.random() * 200 - 100 // Moves randomly up or down
+  // Get the screen size dynamically for better mobile support
+  const screenWidth = window.innerWidth || document.documentElement.clientWidth
+  const screenHeight = window.innerHeight || document.documentElement.clientHeight
+
+  // Ensure the button stays within visible bounds
+  const randomX = Math.random() * (screenWidth - 100) // Adjust to prevent overflow
+  const randomY = Math.random() * (screenHeight - 100)
 
   noButtonStyle.value = {
-    position: 'absolute',
+    position: 'absolute', // Absolute positioning ensures no duplicate button stays in place
     left: `${randomX}px`,
     top: `${randomY}px`,
     transition: 'left 0.2s ease, top 0.2s ease',
   }
 }
+
 
 const closeModal = () => {
   showModal.value = false
